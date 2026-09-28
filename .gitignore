@@ -1,0 +1,8 @@
+# Photos originales (copies renommées dans images/)
+/*_n.jpg
+/*_n (1).jpg
+
+# Outils locaux
+.claude/
+.DS_Store
+Thumbs.db

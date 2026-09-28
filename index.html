@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lamlihcaftan — Création et créativité</title>
+  <meta name="description" content="Lamlihcaftan : djellabas et caftans marocains faits main, imaginés par le styliste Karim LAMLIH. Sfifa, aakad et broderie, créés avec passion." />
+  <meta name="author" content="Karim LAMLIH" />
+  <meta name="theme-color" content="#0E1128" />
+  <link rel="alternate" hreflang="fr" href="index.html" />
+  <link rel="alternate" hreflang="ar" href="ar.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='none' stroke='%231F2347' stroke-width='6'/><path d='M55 18 C40 30 38 50 60 44 C70 42 64 56 50 62 C40 68 44 80 52 86' fill='none' stroke='%231F2347' stroke-width='6' stroke-linecap='round'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    // Applique le thème avant le rendu pour éviter le flash
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('lamlih-theme'); } catch (e) {}
+      if (!t) t = 'dark'; // mode nuit par défaut
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Écran d'intro : le logo se dessine comme un fil -->
+  <div class="loader" aria-hidden="true">
+    <svg class="loader__logo" viewBox="0 0 120 120">
+      <circle class="stitch-draw" cx="60" cy="60" r="52" />
+      <path class="stitch-draw" d="M66 20 C62 32 50 38 48 50 C46 60 58 58 70 54 C78 51 76 62 66 70 C56 78 52 86 60 100" />
+      <path class="stitch-draw" d="M64 34 a8 8 0 1 0 8 10" />
+    </svg>
+    <p class="loader__name">LAMLIHCAFTAN</p>
+  </div>
+
+  <!-- Fil de progression (comme une sfifa cousue le long de la page) -->
+  <div class="thread" aria-hidden="true"><span class="thread__fill"></span></div>
+
+  <!-- Ciel de nuit -->
+  <div class="sky" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#accueil" class="brand" aria-label="Lamlihcaftan — accueil">
+      <svg class="brand__mark" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="52" />
+        <path d="M66 20 C62 32 50 38 48 50 C46 60 58 58 70 54 C78 51 76 62 66 70 C56 78 52 86 60 100" />
+        <path d="M64 34 a8 8 0 1 0 8 10" />
+      </svg>
+      <span class="brand__text">
+        <strong>LAMLIHCAFTAN</strong>
+        <em>Création et créativité</em>
+      </span>
+    </a>
+
+    <nav class="nav__links" id="menu">
+      <a href="#collections">Collections</a>
+      <a href="#styliste">Le styliste</a>
+      <a href="#savoir-faire">Savoir-faire</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="#sur-mesure">Sur mesure</a>
+      <a href="#contact" class="nav__cta">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="lang-switch" href="ar.html" hreflang="ar" lang="ar" title="النسخة العربية">عربي</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode nuit" title="Jour / Nuit">
+        <span class="theme-toggle__orb"></span>
+        <span class="theme-toggle__label"><span class="lbl-day">Jour</span><span class="lbl-night">Nuit</span></span>
+      </button>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="accueil">
+      <div class="hero__text">
+        <p class="eyebrow reveal">Maison marocaine · Fait main</p>
+        <h1 class="hero__title">
+          <span class="line reveal">L'élégance</span>
+          <span class="line reveal"><em>cousue</em> de</span>
+          <span class="line reveal">
+            <span class="word-swap" aria-live="polite">
+              <span class="word-day">lumière</span>
+              <span class="word-night">nuit</span>
+            </span>
+          </span>
+        </h1>
+        <p class="hero__lead reveal">
+          Chaque djellaba Lamlihcaftan est une conversation entre la tradition et l'audace :
+          sfifa tressée à la main, boutons aakad et broderies qui racontent le Maroc.
+        </p>
+        <div class="hero__buttons reveal">
+          <a href="#collections" class="btn btn--primary">Découvrir la collection</a>
+          <a href="#sur-mesure" class="btn btn--ghost">Créer sur mesure</a>
+        </div>
+        <p class="hero__arabic reveal" lang="ar" dir="rtl">المليح قفطان</p>
+      </div>
+
+      <div class="hero__visual">
+        <div class="arch arch--hero">
+          <img class="img-day" src="images/soleil-fes-debout.jpg" alt="Djellaba crème Soleil de Fès avec galons multicolores" />
+          <img class="img-night" src="images/nuit-rose-portrait.jpg" alt="Djellaba marine Nuit Rose avec passepoil rose" />
+        </div>
+        <div class="badge-rotate" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs>
+              <path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
+            </defs>
+            <text><textPath href="#circlePath">CRÉATION ET CRÉATIVITÉ • FAIT MAIN AU MAROC • </textPath></text>
+          </svg>
+          <span class="badge-rotate__star">✦</span>
+        </div>
+        <svg class="zellige-star" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon points="50,2 61,27 89,18 76,43 98,60 70,65 70,94 50,76 30,94 30,65 2,60 24,43 11,18 39,27" />
+        </svg>
+      </div>
+
+      <a href="#collections" class="scroll-hint" aria-label="Défiler vers le bas">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ RUBAN SFIFA ============ -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon__track">
+        <span>Sfifa tressée</span><i>✦</i><span>Boutons aakad</span><i>✦</i><span>Broderie randa</span><i>✦</i><span>Coupe sur mesure</span><i>✦</i><span>Tissus choisis</span><i>✦</i><span>Fait main</span><i>✦</i>
+        <span>Sfifa tressée</span><i>✦</i><span>Boutons aakad</span><i>✦</i><span>Broderie randa</span><i>✦</i><span>Coupe sur mesure</span><i>✦</i><span>Tissus choisis</span><i>✦</i><span>Fait main</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ COLLECTIONS ============ -->
+    <section class="section collections" id="collections">
+      <header class="section__head">
+        <p class="eyebrow reveal">Collections</p>
+        <h2 class="section__title reveal">Deux humeurs,<br /><em>une même âme</em></h2>
+        <p class="section__lead reveal">Le jour se pare de soleil, la nuit s'habille de velours marine. Survolez chaque pièce pour la voir sous un autre angle.</p>
+      </header>
+
+      <div class="collections__grid">
+        <article class="look-card look-card--sun reveal" data-tilt>
+          <div class="look-card__media">
+            <img src="images/soleil-fes-debout.jpg" alt="Djellaba Soleil de Fès, pose debout" loading="lazy" />
+            <img class="look-card__alt" src="images/soleil-fes-assise.jpg" alt="" loading="lazy" />
+            <span class="look-card__tag">Jour</span>
+          </div>
+          <div class="look-card__body">
+            <p class="look-card__num">N° 01</p>
+            <h3>Soleil de Fès</h3>
+            <p>Crème citronnée, galons aux couleurs du souk et poches brodées d'un motif en plume. Une pièce lumineuse pour les jours de fête.</p>
+            <ul class="swatches" aria-label="Couleurs du galon">
+              <li style="--c:#F3EDB8"></li><li style="--c:#C79A4B"></li><li style="--c:#D9A0B0"></li><li style="--c:#8E7BB5"></li><li style="--c:#7FA38A"></li>
+            </ul>
+            <a href="#contact" class="link-arrow" data-model="Soleil de Fès">Commander ce modèle <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="look-card look-card--moon reveal" data-tilt>
+          <div class="look-card__media">
+            <img src="images/nuit-rose-pose.jpg" alt="Djellaba Nuit Rose, mains sur les hanches" loading="lazy" />
+            <img class="look-card__alt" src="images/nuit-rose-assise.jpg" alt="" loading="lazy" />
+            <span class="look-card__tag">Nuit</span>
+          </div>
+          <div class="look-card__body">
+            <p class="look-card__num">N° 02</p>
+            <h3>Nuit Rose</h3>
+            <p>Bleu nuit profond, passepoil rose poudré et manches brodées en arabesques. La douceur d'une soirée d'été à Marrakech.</p>
+            <ul class="swatches" aria-label="Couleurs">
+              <li style="--c:#262B5C"></li><li style="--c:#E3AFA6"></li><li style="--c:#F2D4CD"></li>
+            </ul>
+            <a href="#contact" class="link-arrow" data-model="Nuit Rose">Commander ce modèle <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ LE STYLISTE ============ -->
+    <section class="section designer" id="styliste">
+      <div class="designer__monogram reveal" aria-hidden="true">
+        <svg viewBox="0 0 300 300" class="designer__ring">
+          <defs>
+            <path id="ringPath" d="M150,150 m-120,0 a120,120 0 1,1 240,0 a120,120 0 1,1 -240,0" />
+          </defs>
+          <circle cx="150" cy="150" r="138" />
+          <text><textPath href="#ringPath">KARIM LAMLIH • STYLISTE • CRÉATEUR • KARIM LAMLIH • STYLISTE • CRÉATEUR • </textPath></text>
+        </svg>
+        <span class="designer__initials">K<em>L</em></span>
+        <svg class="designer__needle" viewBox="0 0 200 60">
+          <path d="M6 30 C50 5 90 55 140 30" />
+          <path class="needle" d="M140 30 L194 26 L194 34 Z" />
+        </svg>
+      </div>
+
+      <div class="designer__text">
+        <p class="eyebrow reveal">Le styliste</p>
+        <h2 class="section__title reveal">Karim <em>LAMLIH</em></h2>
+        <blockquote class="designer__quote reveal">
+          « Une djellaba ne se porte pas, elle se vit. Chaque fil doit raconter qui vous êtes. »
+        </blockquote>
+        <p class="section__lead reveal">
+          Derrière chaque pièce Lamlihcaftan, il y a le regard de Karim LAMLIH. Styliste et fondateur de la maison,
+          il revisite les codes de la djellaba marocaine : des coupes épurées, des couleurs audacieuses et
+          des finitions artisanales où la sfifa, les aakad et la broderie deviennent une signature.
+        </p>
+        <p class="section__lead reveal">
+          Sa devise tient en deux mots, brodés au cœur de la marque : <strong>création et créativité</strong>.
+        </p>
+        <p class="designer__sign reveal">Karim Lamlih</p>
+      </div>
+    </section>
+
+    <!-- ============ SAVOIR-FAIRE ============ -->
+    <section class="section craft" id="savoir-faire">
+      <div class="craft__pattern" aria-hidden="true"></div>
+      <header class="section__head">
+        <p class="eyebrow reveal">Savoir-faire</p>
+        <h2 class="section__title reveal">Le détail est<br /><em>notre signature</em></h2>
+      </header>
+
+      <div class="craft__grid">
+        <article class="craft-item reveal">
+          <div class="craft-item__lens" style="--img:url('../images/nuit-rose-portrait.jpg'); --pos: 50% 58%; --zoom: 260%"></div>
+          <span class="craft-item__num">01</span>
+          <h3>La Sfifa</h3>
+          <p>Ce galon tressé à la main court le long des coutures et dessine la silhouette. Des heures de travail pour chaque ligne.</p>
+        </article>
+        <article class="craft-item reveal">
+          <div class="craft-item__lens" style="--img:url('../images/nuit-rose-pose.jpg'); --pos: 50% 55%; --zoom: 300%"></div>
+          <span class="craft-item__num">02</span>
+          <h3>Les Aakad</h3>
+          <p>Petits boutons en fil noués un à un. Ils ferment la djellaba comme on ferme un secret : avec patience.</p>
+        </article>
+        <article class="craft-item reveal">
+          <div class="craft-item__lens" style="--img:url('../images/nuit-rose-assise.jpg'); --pos: 20% 64%; --zoom: 300%"></div>
+          <span class="craft-item__num">03</span>
+          <h3>La Broderie</h3>
+          <p>Arabesques florales sur les manches, plumes brodées sur les poches : l'ornement qui rend chaque pièce unique.</p>
+        </article>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal"><strong data-count="100">0</strong><span>% fait main</span></div>
+        <div class="stat reveal"><strong data-count="2">0</strong><span>humeurs : jour &amp; nuit</span></div>
+        <div class="stat reveal"><strong data-count="1">0</strong><span>pièce, une histoire</span></div>
+      </div>
+    </section>
+
+    <!-- ============ LOOKBOOK ============ -->
+    <section class="section lookbook" id="lookbook">
+      <header class="section__head section__head--row">
+        <div>
+          <p class="eyebrow reveal">Lookbook</p>
+          <h2 class="section__title reveal">Galerie <em>en mouvement</em></h2>
+        </div>
+        <div class="lookbook__controls">
+          <button class="circle-btn" data-dir="-1" aria-label="Image précédente">←</button>
+          <button class="circle-btn" data-dir="1" aria-label="Image suivante">→</button>
+        </div>
+      </header>
+
+      <div class="lookbook__rail" id="rail" tabindex="0" aria-label="Galerie de photos, faites défiler horizontalement">
+        <figure class="frame frame--tall"><img src="images/nuit-rose-portrait.jpg" alt="Nuit Rose — portrait" loading="lazy" /><figcaption>Nuit Rose · Portrait</figcaption></figure>
+        <figure class="frame"><img src="images/soleil-fes-assise.jpg" alt="Soleil de Fès — assise" loading="lazy" /><figcaption>Soleil de Fès · Repos</figcaption></figure>
+        <figure class="frame frame--arch"><img src="images/nuit-rose-assise.jpg" alt="Nuit Rose — assise" loading="lazy" /><figcaption>Nuit Rose · Détail des manches</figcaption></figure>
+        <figure class="frame frame--tall"><img src="images/soleil-fes-debout.jpg" alt="Soleil de Fès — debout" loading="lazy" /><figcaption>Soleil de Fès · Lumière</figcaption></figure>
+        <figure class="frame"><img src="images/nuit-rose-pose.jpg" alt="Nuit Rose — pose" loading="lazy" /><figcaption>Nuit Rose · Assurance</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ============ SUR MESURE ============ -->
+    <section class="section bespoke" id="sur-mesure">
+      <header class="section__head">
+        <p class="eyebrow reveal">Sur mesure</p>
+        <h2 class="section__title reveal">Votre djellaba,<br /><em>à votre image</em></h2>
+        <p class="section__lead reveal">Tissu, couleur de la sfifa, broderie, coupe : vous choisissez, nous créons.</p>
+      </header>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M14 24h20M24 14v20"/></svg>
+          </span>
+          <h3>Inspiration</h3>
+          <p>Choisissez un modèle ou partagez-nous votre idée.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="6" y="18" width="36" height="12" rx="2"/><path d="M12 18v5M18 18v7M24 18v5M30 18v7M36 18v5"/></svg>
+          </span>
+          <h3>Mesures</h3>
+          <p>Nous prenons vos mesures pour une coupe parfaite.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M10 38 L38 10"/><circle cx="36" cy="12" r="3"/><path d="M8 30c6 2 10 6 10 10" stroke-dasharray="3 3"/></svg>
+          </span>
+          <h3>Confection</h3>
+          <p>Nos artisans cousent, tressent et brodent à la main.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M8 18h32v22H8z"/><path d="M8 18l16 10 16-10"/><path d="M18 10h12"/></svg>
+          </span>
+          <h3>Livraison</h3>
+          <p>Votre pièce unique vous est remise avec soin.</p>
+        </li>
+      </ol>
+
+      <!-- Petit configurateur de couleurs -->
+      <div class="studio reveal">
+        <div class="studio__preview" aria-hidden="true">
+          <svg viewBox="0 0 200 300" class="studio__svg">
+            <path class="dj-body" d="M100 20 C80 20 72 34 70 46 L40 70 L20 160 L42 166 L58 100 L52 285 L148 285 L142 100 L158 166 L180 160 L160 70 L130 46 C128 34 120 20 100 20Z"/>
+            <path class="dj-trim" d="M100 42 L100 285" />
+            <path class="dj-trim" d="M86 40 L100 88 L114 40" />
+            <path class="dj-trim thin" d="M70 46 L58 100 L52 285" />
+            <path class="dj-trim thin" d="M130 46 L142 100 L148 285" />
+            <path class="dj-trim" d="M22 150 L44 156" />
+            <path class="dj-trim" d="M178 150 L156 156" />
+            <g class="dj-buttons">
+              <circle cx="100" cy="100" r="2.4"/><circle cx="100" cy="110" r="2.4"/><circle cx="100" cy="120" r="2.4"/><circle cx="100" cy="130" r="2.4"/><circle cx="100" cy="140" r="2.4"/><circle cx="100" cy="150" r="2.4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="studio__controls">
+          <h3>Atelier virtuel</h3>
+          <p class="studio__hint">Composez votre harmonie de couleurs, puis envoyez-la-nous.</p>
+
+          <fieldset>
+            <legend>Tissu</legend>
+            <div class="chips" data-target="body">
+              <button class="chip is-active" style="--c:#262B5C" data-color="#262B5C" data-name="Bleu nuit" aria-label="Bleu nuit"></button>
+              <button class="chip" style="--c:#F3EDB8" data-color="#F3EDB8" data-name="Crème citron" aria-label="Crème citron"></button>
+              <button class="chip" style="--c:#7A1F34" data-color="#7A1F34" data-name="Bordeaux" aria-label="Bordeaux"></button>
+              <button class="chip" style="--c:#2F5D50" data-color="#2F5D50" data-name="Vert émeraude" aria-label="Vert émeraude"></button>
+              <button class="chip" style="--c:#F7F2EC" data-color="#F7F2EC" data-name="Blanc cassé" aria-label="Blanc cassé"></button>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Sfifa &amp; aakad</legend>
+            <div class="chips" data-target="trim">
+              <button class="chip is-active" style="--c:#E3AFA6" data-color="#E3AFA6" data-name="Rose poudré" aria-label="Rose poudré"></button>
+              <button class="chip" style="--c:#C9A04E" data-color="#C9A04E" data-name="Or" aria-label="Or"></button>
+              <button class="chip" style="--c:#F7F2EC" data-color="#F7F2EC" data-name="Ivoire" aria-label="Ivoire"></button>
+              <button class="chip" style="--c:#8E7BB5" data-color="#8E7BB5" data-name="Lavande" aria-label="Lavande"></button>
+              <button class="chip" style="--c:#1B1B1B" data-color="#1B1B1B" data-name="Noir" aria-label="Noir"></button>
+            </div>
+          </fieldset>
+
+          <p class="studio__summary">Votre choix : <strong id="studioSummary">Bleu nuit &amp; Rose poudré</strong></p>
+          <a href="#contact" class="btn btn--primary" id="studioSend">Envoyer ma création</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="contact__card reveal">
+        <svg class="contact__moon" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M62 10 A40 40 0 1 0 90 70 A32 32 0 1 1 62 10Z" />
+        </svg>
+        <p class="eyebrow">Contact</p>
+        <h2 class="section__title">Parlons de <em>votre prochaine pièce</em></h2>
+        <p class="section__lead">Une question, une commande, un rêve de djellaba ? Écrivez-nous.</p>
+
+        <form class="contact__form" id="contactForm">
+          <div class="field">
+            <input type="text" id="name" name="name" placeholder=" " required />
+            <label for="name">Votre nom</label>
+          </div>
+          <div class="field">
+            <input type="tel" id="phone" name="phone" placeholder=" " />
+            <label for="phone">Téléphone</label>
+          </div>
+          <div class="field field--full">
+            <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+            <label for="message">Votre message</label>
+          </div>
+          <button type="submit" class="btn btn--primary field--full">Envoyer via WhatsApp</button>
+        </form>
+
+        <div class="contact__links">
+          <a href="tel:+212610795059">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+            <span dir="ltr">06 10 79 50 59</span>
+          </a>
+          <a href="https://www.instagram.com/lamlihcaftan" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/lamlihcaftan" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg>
+            Facebook
+          </a>
+          <a href="mailto:contact@lamlihcaftan.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            contact@lamlihcaftan.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__big" aria-hidden="true">LAMLIHCAFTAN</div>
+    <div class="footer__row">
+      <p>© <span id="year"></span> Lamlihcaftan™ — Une création de Karim LAMLIH</p>
+      <p lang="ar" dir="rtl" class="footer__ar">صُنع بحب في المغرب</p>
+      <a href="#accueil" class="footer__top">Haut de page ↑</a>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie" hidden>
+    <button class="lightbox__close" aria-label="Fermer">×</button>
+    <img src="" alt="" />
+    <p class="lightbox__cap"></p>
+  </div>
+
+  <!-- Bouton WhatsApp flottant -->
+  <a class="wa-float" href="https://wa.me/212610795059" target="_blank" rel="noopener" aria-label="Discuter sur WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.8.8a3.3 3.3 0 0 0 2.1-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.2-.6-.4z"/></svg>
+  </a>
+
+  <!-- Curseur fil & aiguille (desktop) -->
+  <div class="cursor" aria-hidden="true"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
